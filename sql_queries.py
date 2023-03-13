@@ -94,3 +94,10 @@ def find_regears(member_id: int, conn:sqlite3.Connection)->list:
         return error_value
     else:
         return regears
+    
+def update_regear_price(new_value: int, death_id: int, conn:sqlite3.Connection)->list:
+    c=conn.cursor()
+    c.execute(f'UPDATE buy_orders SET regear_ammount = {new_value} WHERE death_id = {death_id}')
+    conn.commit()
+    conn.close()
+

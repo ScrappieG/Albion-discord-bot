@@ -152,6 +152,10 @@ def loadout_prices(loadout_list):
                 temp_dict = {'slot': no_prices_list[k]['slot'], 'item': no_prices_list[k]['id'], 'price': price, 'quality': no_prices_list[k]['quality'], 'enchant': no_prices_list[k]['enchant'], 'tier': no_prices_list[k]['tier'], 'en_name': no_prices_list[k]['en_name']}
                 median_prices.append(temp_dict)
             else:
+                if no_prices_list[k]['id'] == 'T5_MOUNT_COUGAR_KEEPER':
+                    {'slot': no_prices_list[k]['slot'], 'item': no_prices_list[k]['id'], 'price': 100000, 'quality': no_prices_list[k]['quality'], 'enchant': 1, 'tier': 5, 'en_name': 'swiftclaw'}
+                    median_prices.append(temp_dict)
+
                 price = 0
                 temp_dict = {'slot': no_prices_list[k]['slot'], 'item': no_prices_list[k]['id'], 'price': price, 'quality': no_prices_list[k]['quality'], 'enchant': no_prices_list[k]['enchant'], 'tier': no_prices_list[k]['tier'], 'en_name': no_prices_list[k]['en_name']}
                 median_prices.append(temp_dict)
@@ -238,7 +242,7 @@ def regear_handeling(data, battle_id):
     else:
         data = data['events']
         for i in range(len(data)):
-            temp = int(data[i]['battle_id'])
+            temp = int(data[i]['id'])
             if temp == int(battle_id):
                 data = data[i]['victim']
                 data = data['loadout']
