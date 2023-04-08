@@ -1,4 +1,6 @@
 This bot is still being worked on and tested
+if you want to see a more simple bot please visit my other bot
+@ https://github.com/ScrappieG/Albion-discord-bot-v2
 
 any questions feel free to reach out to me at stone#3650
 ----------------------------------------------------------------
